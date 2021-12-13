@@ -18,13 +18,9 @@ export default function createWebSocketPlugin (websocket = defaultConnection()) 
       if (typeof e.data === 'string') {
         let json = JSON.parse(e.data)
         if (json.message === 'win') {
-          if (confirm('You Won!')) {
-            window.location.reload()
-          }
+          store.dispatch('gameData/gameWon')
         } else if (json.message === 'gameover') {
-          if (confirm('Game Over!')) {
-            window.location.reload()
-          }
+          store.dispatch('gameData/gameOver')
         } else {
           store.dispatch('gameData/updateGameField', json)
         }
@@ -33,6 +29,9 @@ export default function createWebSocketPlugin (websocket = defaultConnection()) 
 
     store.subscribe((mutation, state) => {
       if (state.gameData.connected && mutation.type === 'gameData/NEW_TURN') {
+        websocket.send(mutation.payload)
+      }
+      if (state.gameData.connected && mutation.type === 'gameData/NEW_GAME') {
         websocket.send(mutation.payload)
       }
     })
