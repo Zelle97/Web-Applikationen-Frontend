@@ -94,35 +94,35 @@ select[class*="color-picker-"] {
 //-------------------------Background Colors
 
 .bg-color-black {
-  background-color: black;
+  background-color: black !important;
 }
 
 .bg-color-red {
-  background-color: red;
+  background-color: red !important;
 }
 
 .bg-color-green {
-  background-color: green;
+  background-color: green !important;
 }
 
 .bg-color-brown {
-  background-color: saddlebrown;
+  background-color: saddlebrown !important;
 }
 
 .bg-color-yellow{
-  background-color: yellow;
+  background-color: yellow !important;
 }
 
 .bg-color-blue {
-  background-color: blue;
+  background-color: blue !important;
 }
 
 .bg-color-white {
-  background-color: white;
+  background-color: white !important;
 }
 
 .bg-color-orange {
-  background-color: orange;
+  background-color: orange !important;
 }
 
 </style>
