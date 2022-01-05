@@ -26,7 +26,6 @@ body {
   min-height: 100%;
   min-width: 100%;
 }
-
 //-------------------------Controls
 
 .main-header {
@@ -90,8 +89,6 @@ select[class*="color-picker-"] {
   flex-grow: 1;
   border: solid black;
   border-radius: 0.3em;
-  background-color: white;
-  opacity: 0.5;
 }
 
 .gamefield .uppergamefieldrow .upperGamePanel {
@@ -107,7 +104,7 @@ select[class*="color-picker-"] {
   margin: @flexMargin;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
-  border: dotted black;
+  border: thin solid;
   border-radius: 0.3em;
   background-color: white;
 }
@@ -119,13 +116,16 @@ select[class*="color-picker-"] {
   display: flex;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
-  border: dotted black;
+  border: thin solid;
   border-radius: 0.3em;
   background-color: white;
 }
 
 .gamefield .uppergamefieldrow .uppercorrectColorPanel {
   text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 120%;
   margin: @flexMargin;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
@@ -133,12 +133,19 @@ select[class*="color-picker-"] {
 
 .gamefield .uppergamefieldrow .uppercorrectPositionPanel {
   text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 120%;
   margin: @flexMargin;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
 }
 
 //-------------------------Background Colors
+.bg-color- {
+  background-color: white;
+  opacity: 0.5;
+}
 
 .bg-color-black {
   background-color: black !important;
