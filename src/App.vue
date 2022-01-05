@@ -38,10 +38,20 @@ select[class*="color-picker-"] {
   margin-bottom: 8px;
 }
 
+.controls {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .control-item {
   text-align: center;
   justify-content: center;
   padding: 12px;
+}
+
+.color-input-row {
+  padding-top: 30px;
 }
 
 //-------------------------Gamfield
@@ -65,30 +75,67 @@ select[class*="color-picker-"] {
   flex-grow: 1;
 }
 
+.uppergamefieldrow {
+  margin: @flexMargin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  //align-items: center;
+  flex-grow: 1;
+}
+
 .gamefield .gamefieldrow .gamepanel {
   margin: @flexMargin;
   flex-basis: @flexBoxSizing;
   flex-grow: 1;
   border: solid black;
   border-radius: 0.3em;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.gamefield .uppergamefieldrow .upperGamePanel {
+  margin: @flexMargin;
+  flex-basis: @flexBoxSizing;
+  flex-grow: 1;
 }
 
 .gamefield .gamefieldrow .correctColorPanel {
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   margin: @flexMargin;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
   border: dotted black;
   border-radius: 0.3em;
+  background-color: white;
 }
 
 .gamefield .gamefieldrow .correctPositionPanel {
-  text-align: center;
   margin: @flexMargin;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   flex-basis: calc(@flexBoxSizing/2);
   flex-grow: 1;
   border: dotted black;
   border-radius: 0.3em;
+  background-color: white;
+}
+
+.gamefield .uppergamefieldrow .uppercorrectColorPanel {
+  text-align: center;
+  margin: @flexMargin;
+  flex-basis: calc(@flexBoxSizing/2);
+  flex-grow: 1;
+}
+
+.gamefield .uppergamefieldrow .uppercorrectPositionPanel {
+  text-align: center;
+  margin: @flexMargin;
+  flex-basis: calc(@flexBoxSizing/2);
+  flex-grow: 1;
 }
 
 //-------------------------Background Colors

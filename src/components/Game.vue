@@ -1,26 +1,43 @@
 <template>
     <div class="container">
+      <div id="bg">
+        <img src="static/wood_background.jpg" alt="">
+      </div>
       <navbar></navbar>
       <div class="row">
-        <div class="col-lg-6">
-          <h2 class="main-header">Gamefield</h2>
+        <div class="col-lg-6" style="padding-top: 50px">
           <div class="gamefield">
+            <div class="uppergamefieldrow">
+              <div class="uppercorrectColorPanel">
+                Correct Colors:
+              </div>
+              <div class="upperGamePanel">
+              </div>
+              <div class="upperGamePanel">
+              </div>
+              <div class="upperGamePanel">
+              </div>
+              <div class="upperGamePanel">
+              </div>
+              <div class="uppercorrectPositionPanel">
+                Correct Positions:
+              </div>
+            </div>
             <div v-for="(row, index) in gameData" v-bind:key="'row-'+index" class="gamefieldrow">
               <div class="correctColorPanel">
-                Correct Colors: {{row.correctColors}}
+                {{row.correctColors}}
               </div>
               <div v-for="(color, cIndex) in row.attempt" v-bind:key="'row-'+index+'-color-'+cIndex" class="gamepanel" v-bind:class="[`bg-color-${color.color}`]">
               </div>
               <div class="correctPositionPanel">
-                Correct Positions: {{row.correctPositions}}
+                {{row.correctPositions}}
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <h2 class="main-header">Control Buttons</h2>
-          <div class="controls">
-            <div class="row">
+        <div class="col-lg-6 controls">
+          <div class="">
+            <div class="row color-input-row">
               <color-input index="0"></color-input>
               <color-input index="1"></color-input>
               <color-input index="2"></color-input>
@@ -65,5 +82,21 @@ export default {
 </script>
 
 <style scoped>
-
+#bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
 </style>
