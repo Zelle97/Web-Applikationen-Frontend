@@ -17,7 +17,7 @@ export default {
     return {
       selected: null,
       colors: [
-        {value: null, text: 'Please select a Color'},
+        {value: null, text: 'Choose'},
         {value: 1, text: 'Brown'},
         {value: 2, text: 'Red'},
         {value: 3, text: 'Green'},

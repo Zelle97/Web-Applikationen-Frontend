@@ -1,9 +1,10 @@
 <template>
-    <div class="container">
+    <div style="width: 100%">
       <div id="bg">
         <img src="static/wood_background.jpg" alt="">
       </div>
       <navbar></navbar>
+      <div class="container">
       <div class="row">
         <div class="col-lg-6" style="padding-top: 50px">
           <div class="gamefield">
@@ -44,20 +45,15 @@
               <color-input index="3"></color-input>
             </div>
             <div class="row">
-              <div class="col-lg-12 col-sm-4 control-item">
-                <button type="button" class="btn btn-primary" v-on:click="submitTurn">Submit</button>
-              </div>
-              <div class="col-lg-6 col-sm-4 control-item">
-                <button type="button" class="btn btn-secondary" onclick="submitUndo()">Undo</button>
-              </div>
-              <div class="col-lg-6 col-sm-4 control-item">
-                <button type="button" class="btn btn-secondary" onclick="submitRedo()">Redo</button>
-              </div>
+              <div class="col-lg-12 col-sm control-item">
+                <button type="button" class="btn btn-success" v-on:click="submitTurn">Submit</button>
+             </div>
             </div>
           </div>
         </div>
       </div>
       <event-modal></event-modal>
+    </div>
     </div>
 </template>
 
@@ -84,8 +80,8 @@ export default {
 <style scoped>
 #bg {
   position: fixed;
-  top: -50%;
-  left: -50%;
+  top: 10%;
+  left: 0;
   width: 100%;
   height: 100%;
 }
