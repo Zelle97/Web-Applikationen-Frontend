@@ -1,5 +1,5 @@
 function defaultConnection () {
-  return new WebSocket('ws://backend:9000/websocket')
+  return new WebSocket('wss://' + process.env.BACKEND_URL + '/websocket')
 }
 
 export default function createWebSocketPlugin (websocket = defaultConnection()) {
