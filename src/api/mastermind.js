@@ -1,5 +1,9 @@
 function defaultConnection () {
-  return new WebSocket('wss://' + process.env.BACKEND_URL + '/websocket')
+  if (process.env.NODE_ENV === 'production') {
+    return new WebSocket('wss://' + process.env.BACKEND_URL + '/websocket')
+  } else {
+    return new WebSocket('ws://' + process.env.BACKEND_URL + '/websocket')
+  }
 }
 
 export default function createWebSocketPlugin (websocket = defaultConnection()) {

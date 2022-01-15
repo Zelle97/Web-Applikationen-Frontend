@@ -5,6 +5,9 @@ const state = () => ({
 const getters = {
   isLoggedIn (state) {
     return state.loggedIn
+  },
+  getUser (state) {
+    return state.data
   }
 }
 
@@ -28,6 +31,10 @@ const actions = {
     } else {
       commit('SET_USER', null)
     }
+  },
+  logoutUser ({ commit }) {
+    commit('SET_USER', null)
+    commit('SET_LOGGED_IN', false)
   }
 }
 

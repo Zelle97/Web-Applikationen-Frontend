@@ -86,8 +86,12 @@ const actions = {
     commit('SET_GAMEOVER', true)
   },
   resetGame ({ commit }) {
-    commit('RESET_GAME')
+    commit('RESET_GAME', 'easy')
     commit('NEW_GAME', 'easy')
+  },
+  changeDifficulty ({ commit }, difficulty) {
+    commit('RESET_GAME', difficulty)
+    commit('NEW_GAME', difficulty)
   },
   connectionOpened ({ commit }) {
     commit('SET_CONNECTION', true)
@@ -132,26 +136,10 @@ const mutations = {
   SET_GAMEFIELD (state, newGamefield) {
     state.gameField = newGamefield
   },
-  RESET_GAME (state) {
-    // TODO
+  RESET_GAME (state, difficulty) {
     state.win = false
     state.gameOver = false
-    state.gameField = [
-      {
-        attempt: [{color: ' '}, {color: ' '}, {color: ' '}, {color: ' '}],
-        correctColors: 0,
-        correctPositions: 0
-      },
-      {
-        attempt: [{color: ' '}, {color: ' '}, {color: ' '}, {color: ' '}],
-        correctColors: 0,
-        correctPositions: 0
-      },
-      {
-        attempt: [{color: ' '}, {color: ' '}, {color: ' '}, {color: ' '}],
-        correctColors: 0,
-        correctPositions: 0
-      },
+    let gamefield = [
       {
         attempt: [{color: ' '}, {color: ' '}, {color: ' '}, {color: ' '}],
         correctColors: 0,
@@ -187,6 +175,22 @@ const mutations = {
         correctColors: 0,
         correctPositions: 0
       }]
+
+    let attempt = {
+      attempt: [{color: ' '}, {color: ' '}, {color: ' '}, {color: ' '}],
+      correctColors: 0,
+      correctPositions: 0
+    }
+
+    if (difficulty === 'easy') {
+      gamefield.push(attempt)
+      gamefield.push(attempt)
+      gamefield.push(attempt)
+    } else if (difficulty === 'medium') {
+      gamefield.push(attempt)
+    }
+
+    state.gameField = gamefield
   },
   // eslint-disable-next-line no-unused-vars
   NEW_TURN (state, message) {},
