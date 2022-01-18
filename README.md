@@ -1,8 +1,13 @@
-# web-applikationen-frontend
+# Mastermind Web-App
 
-> A Vue.js project
+Frontend Web-Application for the Mastermind game.
+This is a [Vue.js](https://vuejs.org/) project that connects with the [Mastermind backend](https://github.com/Zelle97/Web-Applikationen).
 
-## Build Setup
+It also uses [firebase](https://firebase.google.com/) for authentication and user management.
+
+For a demo visit: https://mastermind.zellerfabian.de
+
+## Build Setup for local development
 
 ``` bash
 # install dependencies
